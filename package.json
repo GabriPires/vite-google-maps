@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "json-server": "json-server --watch db.json --port 3000 --delay 3000"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.2",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@gabpires/eslint-config": "^1.1.0",
     "@types/google.maps": "^3.54.4",
+    "@types/json-server": "^0.14.6",
     "@types/node": "^20.8.7",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -29,6 +31,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "json-server": "^0.17.4",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",

@@ -1,13 +1,18 @@
 import { Wrapper } from '@googlemaps/react-wrapper'
+import { useEffect, useState } from 'react'
 import { Map } from './components/Map'
 import { Marker } from './components/Marker'
 
 export function App() {
-  const markers: google.maps.LatLngLiteral[] = [
-    { lat: -22.8266262, lng: -45.1959699 },
-    { lat: -22.8221169, lng: -45.1888888 },
-    { lat: -22.8048696, lng: -45.1784175 },
-  ]
+  const [markers, setMarkers] = useState<google.maps.LatLngLiteral[]>([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/sites')
+      .then((response) => response.json())
+      .then((data) => {
+        setMarkers(data)
+      })
+  }, [])
 
   return (
     <Wrapper
